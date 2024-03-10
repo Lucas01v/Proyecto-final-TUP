@@ -1,5 +1,6 @@
 from tkinter import Tk, Button, Entry, Label, ttk, PhotoImage, StringVar, Scrollbar, Frame, messagebox
-from conexion_sqlite1 import Comunicacion
+from conexion_sqlite import Comunicacion
+from time import strftime
 import pandas as pd
 
 class Ventana(Frame):
@@ -143,7 +144,7 @@ class Ventana(Frame):
         i = i-1
         for dato in datos:
             i=i+1
-            self.tabla.insert('', i, text = datos[I][1:2][0], values=datos[i][2:10])
+            self.tabla.insert('', i, text = datos[i][1:2][0], values=datos[i][2:10])
         
 
     def actualizar_datos(self):
