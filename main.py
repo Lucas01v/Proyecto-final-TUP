@@ -35,20 +35,24 @@ class Ventana(Frame):
         self.frame_uno.rowconfigure([0,1,2,3,4,5,6,7,8,9,10,11], weight=1)
         self.frame_dos.columnconfigure(0, weight=1)
         self.frame_dos.rowconfigure(0, weight=1)
-
-        Label(self.frame_uno, text='Opciones', bg='white', fg='black', font=('Kaufmann BT', 13, 'bold')).grid(column=2, row=0)
-        Button(self.frame_uno, text='REFRESCAR', font=('Arial', 9, 'bold'), command=self.actualizar_tabla, fg='black', bg='deep sky blue', width=20, bd=3).grid(column=2, row=1, pady=11)
         
-        Entry(self.frame_uno, textvariable=self.nombre, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=1)
-        Entry(self.frame_uno, textvariable=self.edad, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=2)
-        Entry(self.frame_uno, textvariable=self.correo, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=3)
-        Entry(self.frame_uno, textvariable=self.telefono, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=4)
-        Entry(self.frame_uno, textvariable=self.dias_horarios_pedidos, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=5)
-        Entry(self.frame_uno, textvariable=self.horarios_reparto, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=6)
-        Entry(self.frame_uno, textvariable=self.productos_servicios, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=7)
-        Entry(self.frame_uno, textvariable=self.fecha_ingreso, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=8)
-        Entry(self.frame_uno, textvariable=self.cantidad_pedidos, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=9)
-        Entry(self.frame_uno, textvariable=self.precio, font=('Comic Sans MS', 12), highlightbackground='deep sky blue', highlightthickness=5).grid(column=1,row=10)
+
+        
+        Label(self.frame_uno, text='Opciones', bg='white', fg='black', font=('Kaufmann BT', 13, 'bold')).grid(column=2, row=0)
+        Button(self.frame_uno, text='REFRESCAR', font=('Arial', 9, 'bold'), command=self.actualizar_tabla, fg='black', bg='deep sky blue', width=20, bd=3).grid(column=2, row=1, pady=5)
+        Label(self.frame_uno, text = 'Agregar y actualizar datos', fg='black', bg='white', font=('Rockwell',13,'bold')).grid(columnspan=2, column=0,row=0, pady=5)
+        
+        Label(self.frame_uno, text = 'Nombre', fg='black', bg='white', font=('Rockwell',13,'bold')).grid(columnspan=2, column=0,row=1, pady=5)
+        Label(self.frame_uno, text = 'Edad', fg='black', bg='white', font=('Rockwell',13,'bold')).grid(columnspan=2, column=0,row=2, pady=5)
+        Label(self.frame_uno, text = 'Correo', fg='black', bg='white', font=('Rockwell',13,'bold')).grid(columnspan=2, column=0,row=3, pady=5)
+        Label(self.frame_uno, text = 'Telefono', fg='black', bg='white', font=('Rockwell',13,'bold')).grid(columnspan=2, column=0,row=4, pady=5)
+
+        Entry(self.frame_uno, textvariable=self.nombre, font=('Comic Sans MS', 12), highlightbackground= "depp sky blue", highlightthickness=5).grid(column=1, row=1)
+        Entry(self.frame_uno, textvariable=self.edad, font=('Comic Sans MS', 12), highlightbackground= "depp sky blue", highlightthickness=5).grid(column=1, row=2)
+        Entry(self.frame_uno, textvariable=self.correo, font=('Comic Sans MS', 12), highlightbackground= "depp sky blue", highlightthickness=5).grid(column=1, row=3)
+        Entry(self.frame_uno, textvariable=self.telefono, font=('Comic Sans MS', 12), highlightbackground= "depp sky blue", highlightthickness=5).grid(column=1, row=4)
+        
+        
         
         Button(self.frame_uno, text='AÑADIR DATOS', font=('Arial', 9, 'bold'), bg='deep sky blue', width=20, bd=3, command=self.agregar_datos).grid(column=2, row=2, pady=5, padx=5)
         Button(self.frame_uno, text='LIMPIAR CAMPOS', font=('Arial', 9, 'bold'), bg='deep sky blue', width=20, bd=3, command=self.limpiar_campos).grid(column=2, row=3, pady=5, padx=5)
@@ -96,7 +100,8 @@ class Ventana(Frame):
         self.tabla.heading('Precio', minwidth=100, width=120, anchor='center')
 
         self.tabla.bind("<<TreeviewSelect>>", self.obtener_fila)
-        self.tabla.bind("<Double-1", self.eliminar_datos)
+        self.tabla.bind("<Double-1>", self.eliminar_datos)
+
 
     def obtener_fila(self, event):
         item = self.tabla.focus()
