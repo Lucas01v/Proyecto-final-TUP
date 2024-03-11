@@ -11,12 +11,7 @@ class Ventana(Frame):
         self.edad = StringVar()
         self.correo = StringVar()
         self.telefono = StringVar()
-        self.dias_horarios_pedidos = StringVar()
-        self.horarios_reparto = StringVar()
-        self.productos_servicios = StringVar()
-        self.fecha_ingreso = StringVar()
-        self.cantidad_pedidos = StringVar()
-        self.precio = StringVar()
+
 
         self.master.columnconfigure(0, weight=1)
         self.master.rowconfigure(0, weight=1)

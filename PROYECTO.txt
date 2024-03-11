@@ -1,16 +1,12 @@
 nombre de la base de datos base_datos1.db
 
-CREATE TABLE IF NOT EXISTS datos (
-    ID INTEGER PRIMARY KEY,
-    NOMBRE TEXT,
-    EDAD NUMERIC,
-    CORREO TEXT,
-    dias_horarios_pedidos TEXT,
-    horarios_reparto TEXT,
-    productos_servicios TEXT,
-    fecha_ingreso DATE,
-    cantidad_pedidos INTEGER,
-    precio REAL
+CREATE TABLE "datos" (
+	"ID"	INTEGER,
+	"NOMBRE"	TEXT,
+	"EDAD"	NUMERIC,
+	"CORREO"	TEXT,
+	"TELEFONO"	REAL,
+	PRIMARY KEY("ID" AUTOINCREMENT)
 );
 
 
